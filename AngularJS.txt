@@ -1,0 +1,50 @@
+Angular
+It is based on MVC concept. It has its own controller, HTTP module, and services.
+It is based on TypeScript instead of JavaScript to make the framework typed.
+It is a component based framework.
+It uses service to share data between the component.
+
+Angular CLI
+$ ng new applicationName
+  ng new myapp = This is used to create the new angular application.
+  ng server = this will run the new server
+  ng build = This will build out our asset
+  ng generate component todos = it is use to generate the new components, service or modules
+  ng generate module app-routing
+  ng generate service todo
+
+  To install Angular
+  First install node.js then run below commands
+
+  sudo npm install -g @angular/cli
+
+NOTE: sudo is to get the root access and -g is for the global.
+
+Creating new application
+ng new angular-crash-todolist
+If we say yes to routing it will create the routing module
+
+ng serve --open (This will run the dev server and open in browser)
+
+in index.html <app-root> tag is embedding the root app component. All our custom components goes under <app-root>
+
+app folder has all the components server module etc.
+
+file app.module.ts file is the entry point for angular. This file has below module by default
+
+@NgModule({
+  declarations: [
+    AppComponent === This place all the components goes. If you are using CLI then CLI will take care of adding those details here.
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule == If you want to use any external module you need to include those modules here and at the top with import statements.
+  ],
+  providers: [], = The service that we want to include.
+  bootstrap: [AppComponent] = This just bootstrap the main app component.
+})
+
+ng generate component components/todos = This command will create a new component in components folder.
+
+constructor will use to import services
+ngOnInit is use to do all other things which we need to do while loading the component.
